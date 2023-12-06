@@ -26,12 +26,32 @@ public class UserRegistrationTest {
 
     }
 
-
     @Test
     public void testEmailValidation() {
         boolean email = false;
         try {
             email = userRegistration.emailValidation("abc.xyz@bl.co,in");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    public void validateMobilePositive() {
+        boolean mobile = false;
+        try {
+            mobile = userRegistration.phoneNumberValidation("+91-67891679");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void validatePassword() {
+        boolean actual2 = false;
+        try {
+            actual2 = userRegistration.passwordValidation("Swapnil@123");
         } catch (Exception e) {
             e.printStackTrace();
         }
