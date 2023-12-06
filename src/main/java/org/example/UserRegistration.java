@@ -16,4 +16,11 @@ public class UserRegistration {
         else
             throw new Exception("You enter Invalid Last Name");
     }
+
+    public boolean emailValidation(String email) throws Exception {
+        if (Pattern.matches("^[a-zA-Z\\\\d]{1,1}[a-zA-Z\\\\d+_.-]+@[a-zA-Z]+.[a-zA-z.]{2,}$", email))
+            return true;
+        else
+            throw new Exception("You entered invalid mail");
+    }
 }
